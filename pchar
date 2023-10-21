@@ -1,0 +1,31 @@
+#include "monty.h"
+
+/**
+* pchar - Prints the character corresponding to
+* the ASCII value at the top of the stack.
+* Exits with an error message if
+* the value is out of range or the stack is empty.
+*/
+void pchar(void)
+{
+int top;
+int value;
+if (top >= 0)
+{
+value = pop();
+if (value >= 0 && value <= 127)
+{
+printf("%c\n", (char)value);
+}
+else
+{
+printf("Error: can't pchar, value out of range\n");
+exit(EXIT_FAILURE);
+}
+}
+else
+{
+printf("Error: can't pchar, stack empty\n");
+exit(EXIT_FAILURE);
+}
+}
